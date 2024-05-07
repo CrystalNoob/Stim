@@ -139,7 +139,7 @@ DROP TABLE IF EXISTS `developer`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `developer` (
   `email` varchar(255) NOT NULL,
-  `nama` varchar(20) NOT NULL,
+  `nama` varchar(255) DEFAULT NULL,
   `tanggal_pendirian` date NOT NULL,
   `deskripsi` text DEFAULT NULL,
   PRIMARY KEY (`email`)
@@ -152,6 +152,30 @@ CREATE TABLE `developer` (
 
 LOCK TABLES `developer` WRITE;
 /*!40000 ALTER TABLE `developer` DISABLE KEYS */;
+INSERT INTO `developer` VALUES
+('1ccompany@gmail.com','1C Company','1991-05-07','Introducing Nova Dynamics, where pixels meet passion and creativity ignites innovation. Our team of boundary-pushing developers crafts immersive worlds and unforgettable experiences, setting new standards in gaming excellence. Join us on our journey as we redefine the gaming landscape, one pixel at a time.'),
+('activision@gmail.com','Activision','1979-01-15',''),
+('atlus@gmail.com','Atlus','1986-04-11',''),
+('banzai@gmail.com','Banzai','2000-02-14','We\'ve released dozens of titles that changed the world (and one that didn\'t). Today, millions of people play our games every day.'),
+('blizzard@gmail.com','Blizzard Entertainment','1991-12-08',''),
+('copcam@gmail.com','Copcam','1979-08-11',''),
+('crypticgames@gmail.com','Cryptic Games','2000-10-21','Cryptic Games is a small indie games team in Adelaide, South Australia. Our mission is to build crazy and exciting worlds for you to explore and conquer.'),
+('fromsoftware@gmail.com','FromSoftware','1986-01-18',''),
+('gachaking@gmail.com','Gacha Games King','2017-06-12','Let\'s gacha!'),
+('gameloft@gmail.com','Gameloft','1999-05-02',''),
+('garena@gmail.com','Garena','2014-03-03',''),
+('kamikaze@gmail.com','Kamikaze Entertainment','1945-08-01','We are self-innovating, striving to create thrilling adventures. We are building the finest MMO game the world has ever seen. Our goal is to create an unforgettable experience through extraordinary gameplay.'),
+('lilboystudio@gmail.com','Little Boys Studio','1945-08-06','We make games that spark your imagination like the games you played as a kid.'),
+('mihoyo@gmail.com','Mihoyo','2011-07-05','We have waifu, so come play our games'),
+('noconnect@gmail.com','No Connect Studio','2007-09-23','Step into a realm where the boundaries of reality blur and the imagination reigns supreme. Our game invites you to embark on an epic journey through a fantastical world teeming with mystery and wonder. Unravel ancient secrets, forge alliances with powerful allies, and confront formidable adversaries as you strive to shape the fate of this mesmerizing realm. Are you ready to unleash your inner hero and leave your mark on this captivating adventure?'),
+('noname@gmail.com','No Name Studio','2009-01-01','It Rhymes With Play'),
+('quagmire@gmail.com','Quagmire Games','2006-10-10',''),
+('raijin@gmail.com','Raijin','2003-11-29','Raijin is an independent RPG developer founded in 1996 in Gent, Belgium.'),
+('raingames@gmail.com','Rain Games','2006-10-10',''),
+('relogic@gmail.com','Re-Logic','2011-10-03','Best known for the Terraria franchise - the revolutionary 2D Sandbox Adventure that has entertained millions of gamers worldwide - Re-Logic seeks to showcase and evolve the limits of what Indie gaming can be!'),
+('simdategamedev@gmail.com','Date Simulator Lovers','2020-09-02',''),
+('twintower@gmail.com','Twin Tower Games','1991-09-11','We make a game of building and destroying towers.'),
+('void@gmail.com','Void Games','2012-12-12','');
 /*!40000 ALTER TABLE `developer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,6 +366,32 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES
+('abarnetti@adobe.com','abarnetti','auJ3*{Q)?3)','Aidan','Barnett','2002-03-29',1531),
+('abeggan2@house.gov','abeggan2','acF0.,+@,WOoFj=oK','April','Beggan','2006-09-10',2715),
+('anarrie0@youtu.be','anarrie0','rzS3<#PpMVOqtD1','Armand','Narrie','2005-03-12',2889),
+('aoakwell4@people.com.cn','aoakwell4','cyM3`$.txQ','Alyssa','Oakwell','2010-08-28',454),
+('cbirkbeckh@amazon.co.jp','cbirkbeckh','ycD9_>Fym=iOubt/@b','Caspar','Birkbeck','2008-01-25',3949),
+('develynl@webs.com','develynl','swX2%$K`rt(PVq<9qz','Daveta','Evelyn','2004-12-29',1249),
+('dmccolgan9@pcworld.com','dmccolgan9','hdU5$*SxB)RNPh+\'n)','Deni','McColgan','1999-12-10',3482),
+('eludfordb@scribd.com','eludfordb','gwN6+>GX7L#Es','Elizabeth','Ludford','2002-11-02',1976),
+('flepickk@simplemachines.org','flepickk','vqZ1}@58Nx%h','Florie','Lepick','2011-06-22',2884),
+('ftallquiste@fc2.com','ftallquiste','alD7=/lT~@mb{JDO','Friedrick','Tallquist','1999-02-05',273),
+('gcornhillg@un.org','gcornhillg','umN9}(9T`j','Giovanna','cornhill','2011-02-15',760),
+('gpoulson8@amazon.co.jp','gpoulson8','ccY1*{|r6!a}Hb#','Gerrie','Poulson','1999-10-01',3197),
+('gsebirej@yandex.ru','gsebirej','cpZ8),A{(@g','Gwyn','Sebire','2005-05-16',1720),
+('jjoire3@example.com','jjoire3','mjJ7!>M5#n4=BQ','Joy','Joire','2012-07-02',3879),
+('lcahey7@blogspot.com','lcahey7','afW5<_*`_/p%`m','Lishe','Cahey','2006-01-20',2321),
+('lmalsher1@usda.gov','lmalsher1','hlA6)|@K<aH+QNrh#t','Lelia','Malsher','1995-09-25',4846),
+('mcumeso@princeton.edu','mcumeso','uxJ9+|kzqd','Mira','Cumes','1999-09-13',3448),
+('msedgea@furl.net','msedgea','mzA6.}+V\'C${(=','Mavis','Sedge','1997-08-09',4375),
+('rarnaudinm@craigslist.org','rarnaudinm','jvE2={lR8Ktt}6?','Rockie','Arnaudin','1997-07-08',4482),
+('rladdsd@soundcloud.com','rladdsd','qyT4%`95J|nIxZ(}aP~','Raf','Ladds','2010-12-07',3169),
+('sheathcoatc@phpbb.com','sheathcoatc','xwJ2${_j6xvZpW_{{Wx','Sully','Heathcoat','2000-03-15',4196),
+('ubengaln@edublogs.org','ubengaln','rgR3{!BwG<k$m%wm@','Ulla','Bengal','2000-12-23',1748),
+('vwahnerf@nsw.gov.au','vwahnerf','fmF0(#B!7YAb`m','Vanya','Wahner','2004-02-05',318),
+('winkin5@nature.com','winkin5','qxE7_*p#W+X|\"7B1.p','Winnie','Inkin','2003-05-16',3317),
+('yianelli6@about.com','yianelli6','dpC8%~gapOoba','Yale','Ianelli','2006-12-27',882);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -405,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-05 18:05:29
+-- Dump completed on 2024-05-07 18:39:42
