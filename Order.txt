@@ -1,0 +1,6 @@
+ATTRIBUTE
+RELATION
+DATABASE
+TRANSITION
+Referential
+FiturTambahan
