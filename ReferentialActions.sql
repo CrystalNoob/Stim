@@ -1,0 +1,95 @@
+-- Relasi mengikuti
+ALTER TABLE mengikuti
+	DROP CONSTRAINT mengikuti_ibfk_1,
+	DROP CONSTRAINT mengikuti_ibfk_2;
+
+ALTER TABLE mengikuti
+	ADD CONSTRAINT FOREIGN KEY (email_dev) REFERENCES developer (email) ON DELETE CASCADE ON UPDATE CASCADE,
+	ADD CONSTRAINT FOREIGN KEY (email_user) REFERENCES user (email) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi aplikasi_user
+ALTER TABLE aplikasi_user
+	DROP CONSTRAINT aplikasi_user_ibfk_1,
+	DROP CONSTRAINT aplikasi_user_ibfk_2;
+
+ALTER TABLE aplikasi_user
+	ADD CONSTRAINT FOREIGN KEY (id_aplikasi) REFERENCES aplikasi (id) ON DELETE CASCADE ON UPDATE CASCADE,
+	ADD CONSTRAINT FOREIGN KEY (email_user) REFERENCES user (email) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi aplikasi
+ALTER TABLE aplikasi
+	DROP CONSTRAINT developer;
+
+ALTER TABLE aplikasi
+	ADD CONSTRAINT FOREIGN KEY (email_developer) REFERENCES developer (email) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi awards
+ALTER TABLE awards
+	DROP CONSTRAINT awards_ibfk_1;
+
+ALTER TABLE awards
+	ADD CONSTRAINT FOREIGN KEY (id_game) REFERENCES video_game (id) ON DELETE SET NULL;
+
+-- Relasi forum
+ALTER TABLE forum
+	DROP CONSTRAINT forum_ibfk_1,
+	DROP CONSTRAINT forum_ibfk_2;
+
+ALTER TABLE forum
+	ADD CONSTRAINT FOREIGN KEY (email_user) REFERENCES aplikasi_user (email_user) ON DELETE CASCADE ON UPDATE CASCADE,
+	ADD CONSTRAINT FOREIGN KEY (id_aplikasi) REFERENCES aplikasi_user (id_aplikasi) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi post
+ALTER TABLE post
+	DROP CONSTRAINT post_ibfk_1,
+	DROP CONSTRAINT post_ibfk_2;
+
+ALTER TABLE post
+	ADD CONSTRAINT FOREIGN KEY (id_forum) REFERENCES forum (id) ON DELETE CASCADE ON UPDATE CASCADE,
+	ADD CONSTRAINT FOREIGN KEY (email_pembuat) REFERENCES user (email) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi vote
+ALTER TABLE vote
+	DROP CONSTRAINT vote_ibfk_1,
+	DROP CONSTRAINT vote_ibfk_2;
+
+ALTER TABLE vote
+	ADD CONSTRAINT FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+	ADD CONSTRAINT FOREIGN KEY (`id_forum`) REFERENCES `forum` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi dlc
+ALTER TABLE dlc
+	DROP CONSTRAINT dlc_ibfk_1;
+
+ALTER TABLE dlc
+	ADD CONSTRAINT FOREIGN KEY (id_video_game) REFERENCES video_game (id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi video_game
+ALTER TABLE video_game
+	DROP CONSTRAINT video_game_ibfk_1;
+
+ALTER TABLE video_game
+	ADD CONSTRAINT FOREIGN KEY (`id`) REFERENCES `aplikasi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi Soundtrack
+ALTER TABLE soundtrack
+	DROP CONSTRAINT soundtrack_ibfk_1;
+
+ALTER TABLE soundtrack
+	ADD CONSTRAINT FOREIGN KEY (`id`) REFERENCES `aplikasi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi lagu
+ALTER TABLE lagu
+	DROP CONSTRAINT lagu_ibfk_1;
+
+ALTER TABLE lagu
+	ADD CONSTRAINT FOREIGN KEY (`id_aplikasi`) REFERENCES `soundtrack` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Relasi berteman
+ALTER TABLE berteman
+	DROP CONSTRAINT berteman_ibfk_1,
+	DROP CONSTRAINT berteman_ibfk_2;
+
+ALTER TABLE berteman
+	ADD CONSTRAINT FOREIGN KEY (`email_user_1`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+	ADD CONSTRAINT FOREIGN KEY (`email_user_2`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
